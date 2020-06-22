@@ -18,16 +18,16 @@ github の WebUI で新しいリポジトリを作成した後、
 下記のコマンドを実行した。
 
 ```shell
-$ git clone https://github.com/m04uc513/aiml-js.git
-$ cd aiml-js/
-$ touch 0README.txt
-$ touch NPM_HOWTO.txt
-$ git status
-$ git add 0README.txt NPM_HOWTO.txt
-$ git status
-$ git commit -m "add local README"
-$ git log
-$ git push -u origin master
+<b>$ git clone https://github.com/m04uc513/aiml-js.git</b>
+<b>$ cd aiml-js/</b>
+<b>$ touch 0README.txt</b>
+<b>$ touch NPM_HOWTO.txt</b>
+<b>$ git status</b>
+<b>$ git add 0README.txt NPM_HOWTO.txt</b>
+<b>$ git status</b>
+<b>$ git commit -m "add local README"</b>
+<b>$ git log</b>
+<b>$ git push -u origin master</b>
 ```
 
 これで作業場所の github リポジトリへの登録はできた。
@@ -40,7 +40,7 @@ $ git push -u origin master
 cli コマンドをサポートする npm パッケージとしての初期化を行う。
 
 ```shell
-$ npm init
+<b>$ npm init</b>
 This utility will walk you through creating a package.json file.
 It only covers the most common items, and tries to guess sensible defaults.
 
@@ -90,21 +90,21 @@ About to write to /Users/fujita/xtr/TinyBots/aiml-js/package.json:
 
 
 Is this OK? (yes) yes
-$ vi package.json
-$ diff -u package.json
+<b>$ vi package.json</b>
+<b>$ diff -u package.json</b>
 
 - "main": "index.js",
 + "bin": {
 +   "aiml-js": "bin/aiml-js"
 + },
 
-$ npm install
+<b>$ npm install</b>
 npm notice created a lockfile as package-lock.json. You should commit this file.
 up to date in 0.356s
 found 0 vulnerabilities
 
-$ mkdir bin
-$ cat > bin/aiml-js
+<b>$ mkdir bin</b>
+<b>$ cat > bin/aiml-js</b>
 #!/usr/bin/env node
 'use strict'
 
@@ -112,23 +112,23 @@ console.log('Hello World');
 $ chmod a+x bin/aiml-js
 $ node bin/aiml-js
 Hello World
-$ npm link
+<b>$ npm link</b>
 up to date in 0.701s
 found 0 vulnerabilities
 
 /usr/local/bin/aiml-js -> /usr/local/lib/node_modules/aiml-js/bin/aiml-js
 /usr/local/lib/node_modules/aiml-js -> /Users/fujita/xtr/TinyBots/aiml-js
-$ aiml-js
+<b>$ aiml-js</b>
 Hello World
-$
+<b>$</b>
 ```
 
 これで aiml-js コマンドはローカルで起動・実行できる。
 
 ```shell
-$ cat > .gitignore
+<b>$ cat > .gitignore</b>
 .DS_Store
-$ git status
+<b>$ git status</b>
 On branch master
 Your branch is up to date with 'origin/master'.
 
@@ -147,8 +147,8 @@ Untracked files:
 	package.json
 
 no changes added to commit (use "git add" and/or "git commit -a")
-$ git add .gitignore bin package-lock.json package.json
-$ git status
+<b>$ git add .gitignore bin package-lock.json package.json</b>
+<b>$ git status</b>
 On branch master
 Your branch is up to date with 'origin/master'.
 
@@ -166,14 +166,14 @@ Changes not staged for commit:
 
 	modified:   NPM_HOWTO.txt
 
-$ git commit -m "add aiml-js cli command"
+<b>$ git commit -m "add aiml-js cli command"</b>
 [master 4c1f1e5] add aiml-js cli command
  4 files changed, 36 insertions(+)
  create mode 100644 .gitignore
  create mode 100755 bin/aiml-js
  create mode 100644 package-lock.json
  create mode 100644 package.json
-$ git log
+<b>$ git log</b>
 commit 4c1f1e587dc8390bbd792c1c878390f865c84096 (HEAD -> master)
 Author: Akito Fujita <akito_fujita@mvg.biglobe.ne.jp>
 Date:   Mon Jun 22 22:05:01 2020 +0900
@@ -191,7 +191,7 @@ Author: m04uc513 <akito_fujita@mvg.biglobe.ne.jp>
 Date:   Mon Jun 22 20:56:33 2020 +0900
 
     Initial commit
-$ git push -u origin master
+<b>$ git push -u origin master</b>
 Enumerating objects: 8, done.
 Counting objects: 100% (8/8), done.
 Delta compression using up to 8 threads
@@ -201,5 +201,5 @@ Total 7 (delta 0), reused 0 (delta 0)
 To https://github.com/m04uc513/aiml-js.git
    3726eec..4c1f1e5  master -> master
 Branch 'master' set up to track remote branch 'master' from 'origin'.
-$
+<b>$</b>
 ```
