@@ -1,0 +1,26 @@
+{
+  "name": "aiml-js",
+  "version": "0.0.1",
+  "description": "AIML to js and json",
+  "bin": {
+    "aiml-js": "bin/aiml-js"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/m04uc513/aiml-js.git"
+  },
+  "keywords": [
+    "AIML",
+    "javascript",
+    "JSON"
+  ],
+  "author": "A.Fujita",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/m04uc513/aiml-js/issues"
+  },
+  "homepage": "https://github.com/m04uc513/aiml-js#readme"
+}
