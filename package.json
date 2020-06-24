@@ -24,6 +24,7 @@
   },
   "homepage": "https://github.com/m04uc513/aiml-js#readme",
   "dependencies": {
-    "commander": "^5.1.0"
+    "commander": "^5.1.0",
+    "xml-js": "^1.6.11"
   }
 }

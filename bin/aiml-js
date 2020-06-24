@@ -3,10 +3,42 @@
 
 const program = require('commander');
 
+//program
+//  .version('0.0.1', '-v, --version')
+//  .usage('-n yourname')
+//  .option('-n, --name <value>', 'your name', String, 'World')
+//  .parse(process.argv);
+
 program
   .version('0.0.1', '-v, --version')
-  .usage('-n yourname')
-  .option('-n, --name <value>', 'your name', String, 'World')
   .parse(process.argv);
 
-console.log('Hello ' + program.name + '!');
+const fs = require('fs');
+const convert = require('xml-js');
+const options = { compact: true, spaces: 2 };
+
+//console.log(program.args);
+var files = program.args;
+var sum = 0;
+for (var i = 0; i < files.length; i++) {
+    var xfile = fs.readFileSync(files[i], 'utf8');
+    var xml = convert.xml2js(xfile, options);
+    if (!xml) {
+	console.log("%s not xml", files[i]);
+	break;
+    }
+    if (!xml.aiml) {
+	console.log("%s not xml.aiml", files[i]);
+	break;
+    }
+
+    var len = 0;
+    if (xml.aiml.category) {
+	len = xml.aiml.category.length;
+	if (isNaN(len)) len = 1;
+    }
+    console.log("%d %s", len, files[i]);
+    sum += len;
+}
+console.log("%d TOTAL", sum);
+
